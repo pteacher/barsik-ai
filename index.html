@@ -41,6 +41,7 @@
             position: absolute;
         }
 
+
         @keyframes pulse {
             0% {
                 transform: scale(0);
@@ -81,6 +82,35 @@
             height: 60px;
             position: absolute;
             margin: 21px;
+        }
+
+        @media (max-width: 1024px) {
+            .button {
+                width: 80px !important;
+                height: 80px !important;
+            }
+            #circlein {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .mic-icon {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .button {
+                width: 60px !important;
+                height: 60px !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .button {
+                width: 50px !important;
+                height: 50px !important;
+            }
         }
 
         #caption {
