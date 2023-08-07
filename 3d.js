@@ -391,13 +391,14 @@ recognition.onresult = function (event) {
     console.log(substituteWords(text, dictionary));
     let audio_answer_id = get_answer(text);
     if (audio_answer_id === undefined) audio_answer_id = get_answer(substituteWords(text, dictionary));
+    console.log(audio_answer_id);
     if (audio_answer_id !== undefined) {
         const audio = new Audio("./public/voice/" + audio_answer_id + ".wav");
         audio.play().then();
-        audio.playbackRate = 1.3;
+        audio.playbackRate = 1.0;
         speaking = true;
-        actions["Speaking"].setEffectiveWeight(1);
-        audio.onended=function(){actions["Speaking"].setEffectiveWeight(0); speaking=false; recognition.start();};
+        actions["Mouth loop"].setEffectiveWeight(1);
+        audio.onended=function(){actions["Mouth loop"].setEffectiveWeight(0); speaking=false; recognition.start();};
     } else {
         // console.log(recognition);
         setTimeout(() => {recognition.start()}, 1000);
