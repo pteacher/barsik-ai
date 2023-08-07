@@ -221,8 +221,8 @@ const roughnessMipmapper = new RoughnessMipmapper(renderer);
 const camera = new THREE.PerspectiveCamera(70, windowWidth / windowHeight, 1, 10000);
 camera.position.z = 5;
 
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.update();
+// const controls = new OrbitControls(camera, renderer.domElement);
+// controls.update();
 
 const ambient = new THREE.AmbientLight(0x222222, 8.9);
 scene.add(ambient);
@@ -341,7 +341,7 @@ function animate() {
 function render() {
     const delta = clock.getDelta();
     if (mixer) mixer.update(delta);
-    controls.update();
+    // controls.update();
     renderer.render(scene, camera);
 }
 
