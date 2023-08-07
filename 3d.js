@@ -347,6 +347,14 @@ function render() {
 
 animate();
 
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
+
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
